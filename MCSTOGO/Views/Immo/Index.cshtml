@@ -1,0 +1,103 @@
+﻿@model IEnumerable<PostViewModel>
+@{
+    Layout = "_GMD";
+}
+<!-- Navbar and Header -->
+<nav class="nav-extended" style="background-color: #0c7cd5!important;">
+    <div class="" style="opacity: 1 ; -webkit-filter: grayscale(0%); 
+                                                       filter: grayscale(0%);">
+        <div class="pattern active" style="background-color: #0c7cd5;"></div>
+        @* <img src="~/assets/images/custom/pexels-pixabay-279719.jpg"> *@
+    </div>
+    <div class="nav-wrapper container">
+        <a asp-controller="Home" asp-action="Index" class="brand-logo">MCS - TOGO</a>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li class="active">
+                <a asp-controller="Home" asp-action="Index">Accueil</a>
+            </li>
+        </ul>
+
+
+        <div class="nav-header center">
+            <h1 style="color: white;">Liste de nos articles </h1>
+
+        </div>
+    </div>
+</nav>
+
+<ul class="sidenav" id="nav-mobile">
+    <li class="active"><a asp-action="Index" asp-controller="Home">Accueil</a></li>
+    @*<li><a href="index-dark.html"><i class="material-icons">brightness_3</i>Dark Theme</a></li>
+    <li><a href="blog.html"><i class="material-icons">edit</i>Blog</a></li>*@
+</ul>
+<!-- Gallery -->
+<div id="portfolio" class="section gray">
+    <div class="container">
+
+        <div class="gallery row">
+            @if (Model.Any())
+            {
+                @foreach (var post in Model)
+                {
+                    <div class="col l4 m6 s12 gallery-item gallery-expand gallery-filter polygon">
+                        <div class="gallery-curve-wrapper">
+
+                            <a class="gallery-cover gray" href="@Url.Action("Info", "Immo", new {postId = @post.Id})">
+
+                                <img class="responsive-img" style="height: 250px;background-size:cover; "
+                                     src="@post.PhotoUrls.First()" alt="placeholder">
+                            </a>
+                            <div class="gallery-header">
+                                <span>@post.NomPost</span>
+                                <p>@post.TypeContrat</p>
+                                <p>@post.Prix FCFA</p>
+                                <p>@post.Lieu</p>
+                                <!-- <span>Aquamarine</span> -->
+                            </div>
+                            <div class="gallery-body">
+                                <div class="title-wrapper">
+                                    <h3>@post.NomPost</h3>
+                                    <span class="price">@post.Prix FCFA</span>
+                                </div>
+                                <p class="description">
+                                    @post.Description
+                                </p>
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        @foreach (var PhotoUrl in @post.PhotoUrls)
+                                        {
+                                            <a class="carousel-item" href="#one!">
+                                                <img src="@PhotoUrl" alt="">
+                                            </a>
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            }
+
+         
+        </div >
+
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/init.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/galleryExpand.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/color-thief.min.js")"></script>
+    @* <script type="text/javascript" src="@Url.Content("")"></script> *@
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/imagesloaded.pkgd.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/masonry.pkgd.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/gallery/js/materialize.min.js")"></script>
+}

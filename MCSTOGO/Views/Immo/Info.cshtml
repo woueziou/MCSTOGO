@@ -1,0 +1,79 @@
+﻿@model PostViewModel
+@{
+    Layout = "_MKL";
+}
+
+<div class="infobody">
+    <div class="page-header header-filter clear-filter white-filter"
+         style="background-image: url('@Model.PhotoUrls.First()') ; max-height: 20rem; image-rendering: auto;">
+
+    </div>
+    <div class=" main">
+        <div class="container">
+            <div class="text-center">
+
+                <i class="fa fa-info"></i>
+            </div>
+            <div class="text-center">
+
+                <p>Informations </p>
+            </div>
+            <div>
+                <div class="text-center">
+                    <p class="info-name"> @Model.NomPost </p>
+                </div>
+            </div>
+            <div>
+                <div class="row" style="padding: 10px;
+                        text-align: left;
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: grey;
+                    ">
+                    <div class="col-sm-6">
+                        <div>
+                            <div class="text-center"> Prix </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <div class="text-center"> @Model.Prix FCFA</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-fluid">
+                <div class="row" style="padding: 10px;
+                    text-align: left;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: grey;">
+                    <div class="col-sm-6">
+                        <div>
+                            <div class="text-center"> Lieu </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <div class="text-center"> @Model.Lieu </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <p style="max-width: 70%; text-align: justify;">
+                    @Model.Description
+                </p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <a asp-action="Index" class="btn btn-primary btn-round">Retour vers ma page d'accueil</a>
+            </div>
+            <div style="min-height: 10px;"></div>
+
+        </div>
+    </div>
+
+</div>

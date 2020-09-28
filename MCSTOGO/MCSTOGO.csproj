@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>9f39d399-f752-4d48-9881-39ddf627f009</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\ajax-contact.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\imagesloaded.pkgd.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\isotope.pkgd.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\jquery.easing.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\jquery.magnific-popup.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\main.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\popper.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\scrolling-nav.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\singlepage\js\slick.min.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Helpers" />
+      <Folder Include="wwwroot\gallery" />
+      <Folder Include="wwwroot\material" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ActionParameterAlias" Version="6.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="wwwroot\gallery\css\.DS_Store" />
+      <Content Include="wwwroot\gallery\js\.DS_Store" />
+    </ItemGroup>
+
+</Project>

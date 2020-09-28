@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PostViewModel>;
+@{
+    Layout = "_MKL";
+}
+  <div class="container-fluid" style="background: #0067f4">
+        <div class="section text-center">
+            <h1 style="color: white">Liste de nos articles</h1>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="section text-center">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Faire une recherche</label>
+                        <input type="text" value="" class="form-control" />
+                        <span class="form-control-feedback">
+                            <i class="material-icons">search</i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            @if (Model.Any())
+            {
+          
+            }
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" rel="nofollow" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" rel="nofollow" alt="Card image cap">
+                        <div class="card-body">
+                            <ul style="list-style-type: none;">
+                                <li>Nom : Chambre salon WC</li>
+                                <li>Quartier : Totsi</li>
+                                <li>Prix : 35 000FCFA </li>
+                                <li>Type de contrat : Location</li>
+                            </ul>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" rel="nofollow" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="javascript:;" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:;">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
